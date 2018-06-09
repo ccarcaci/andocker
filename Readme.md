@@ -13,4 +13,4 @@
 * Do the first commit
 * Push
 
-* For React Native default documentation see [here](src/master/React-Native-Readme.md)
+#### For React Native default documentation see [here](React-Native-Readme.md)
