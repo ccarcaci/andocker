@@ -1,7 +1,16 @@
 ## Tranform this template project to a real application
 
-1. Copy folder to a new path
-2. Rename the project name into package.json
-3. Enjoy
+* Copy folder to a new path
+* Delete the .git folder
+* Rename the project name into package.json
+* run npm-install
 
-* For React Native default documentation see [here](React-Native-Readme.md)
+## Configure git repo for the real application
+
+* Create the new repo into git provider (Bitbucket, Github)
+* run git init
+* Link the project to the remote repo following the command suggested from the provider
+* Do the first commit
+* Push
+
+* For React Native default documentation see [here](src/master/React-Native-Readme.md)
