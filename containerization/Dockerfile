@@ -7,26 +7,32 @@ ENV SDKTOOLSARCHIVENAME sdk-tools-linux-4333796.zip
 
 WORKDIR $WORKPATH
 
+# Comment this and uncomment wget below
 COPY $SDKTOOLSARCHIVENAME $WORKPATH
 
 # Node, Npm and Expo layer
-RUN apk update && \
-	apk add --no-cache nodejs nodejs-npm && \
-	npm install expo-cli --global
+RUN apt-get update && \
+	apt-get -y install nodejs npm && \
+	npm install -g expo-cli
 
-# Jdk and Android SDK layerdocker
-RUN ANDROID_HOME=$WORKPATH/$SDKTOOLSPATH && \
-export PATH=$PATH:$WORKPATH/$SDKTOOLSPATH/tools/bin:$WORKPATH/$SDKTOOLSPATH/emulator && \
-	apk --update add openjdk8-jre && \
+# Jdk and Android SDK layer
+RUN apt-get -y install software-properties-common zip && \
+	add-apt-repository ppa:openjdk-r/ppa && \
+	apt-get update && \
+	apt-get -y install openjdk-8-jdk && \
 #	wget https://dl.google.com/android/repository/$SDKTOOLSARCHIVENAME && \
 	mkdir $SDKTOOLSPATH && \
 	unzip $SDKTOOLSARCHIVENAME -d $SDKTOOLSPATH && \
-	rm $SDKTOOLSARCHIVENAME && \
-	yes | sdkmanager --install 'system-images;android-28;google_apis;x86' && \
-	avdmanager create avd -n Nexus5X -k 'system-images;android-28;google_apis;x86' --device 'Nexus 5X'
+	rm $SDKTOOLSARCHIVENAME
+
+# Create Android Device layer
+RUN export ANDROID_HOME=$WORKPATH/$SDKTOOLSPATH && \
+export PATH=$PATH:$WORKPATH/$SDKTOOLSPATH/tools/bin:$WORKPATH/$SDKTOOLSPATH/emulator && \
+yes | sdkmanager --install 'system-images;android-28;google_apis;x86_64' && \
+	avdmanager create avd -n Nexus5X -k 'system-images;android-28;google_apis;x86_64' --device 'Nexus 5X'
 
 COPY script.sh $WORKPATH
-RUN chmod 777 $WORKPATH/script.sh
+RUN chmod +x $WORKPATH/script.sh
 
 # CMD /work/sdk-tools/emulator/emulator
 ENTRYPOINT ["/work/script.sh", "-avd", "Nexus5X"]
