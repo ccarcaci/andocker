@@ -1,6 +1,5 @@
 version: '3'
 services:
-# expo:
   android-emulator:
     image: butomo1989/docker-android-x86-7.1.1
     container_name: android-emulator
@@ -14,6 +13,12 @@ services:
       - 5555
     environment:
       DEVICE: "Nexus 5"
+  expo:
+    build:
+      dockerfile: Dockerfile-expo
+    expose:
+      - 8080
+      - 4443
 ### share volume
 volumes:
     app-volume:

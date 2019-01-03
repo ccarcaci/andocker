@@ -11,6 +11,7 @@ WORKDIR $WORKPATH
 # COPY $SDKTOOLSARCHIVENAME $WORKPATH
 
 # Node, Npm and Expo layer
+
 RUN apt-get update && \
 	apt-get -y install nodejs npm && \
 	npm install -g expo-cli
