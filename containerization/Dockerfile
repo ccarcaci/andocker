@@ -8,7 +8,7 @@ ENV SDKTOOLSARCHIVENAME sdk-tools-linux-4333796.zip
 WORKDIR $WORKPATH
 
 # Comment this and uncomment wget below
-COPY $SDKTOOLSARCHIVENAME $WORKPATH
+# COPY $SDKTOOLSARCHIVENAME $WORKPATH
 
 # Node, Npm and Expo layer
 RUN apt-get update && \
@@ -20,7 +20,7 @@ RUN apt-get -y install software-properties-common zip && \
 	add-apt-repository ppa:openjdk-r/ppa && \
 	apt-get update && \
 	apt-get -y install openjdk-8-jdk && \
-#	wget https://dl.google.com/android/repository/$SDKTOOLSARCHIVENAME && \
+	wget https://dl.google.com/android/repository/$SDKTOOLSARCHIVENAME && \
 	mkdir $SDKTOOLSPATH && \
 	unzip $SDKTOOLSARCHIVENAME -d $SDKTOOLSPATH && \
 	rm $SDKTOOLSARCHIVENAME

@@ -1,0 +1,22 @@
+version: '3'
+services:
+# expo:
+  android-emulator:
+    image: butomo1989/docker-android-x86-7.1.1
+    container_name: android-emulator
+    volumes:
+      - app-volume:/root/
+    ports:
+      - "6080:6080"
+      - "5554:5554"
+      - "5555:5555"
+    expose:
+      - 5555
+    environment:
+      DEVICE: "Nexus 5"
+### share volume
+volumes:
+    app-volume:
+
+# docker run --privileged -d -p 6080:6080 -p 5554:5554 -p 5555:5555 -e DEVICE="Samsung Galaxy S6" --name android-container butomo1989/docker-android-x86-8.1
+# docker run -it --rm -v $PWD/android-testing/ui/espresso/BasicSample:/root/tmp butomo1989/docker-android-x86-8.1 tmp/gradlew build
