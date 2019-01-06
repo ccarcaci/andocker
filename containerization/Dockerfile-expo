@@ -1,0 +1,8 @@
+from node:latest
+label version=0.0.1
+
+env WORKPATH /work
+
+run npm install -g expo-cli
+
+entrypoint expo -V

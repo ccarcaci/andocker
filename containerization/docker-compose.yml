@@ -3,16 +3,12 @@ services:
   android-emulator:
     image: butomo1989/docker-android-x86-7.1.1
     container_name: android-emulator
-    volumes:
-      - app-volume:/root/
     ports:
-      - "6080:6080"
-      - "5554:5554"
-      - "5555:5555"
-    expose:
-      - 5555
+      - 6080:6080
+      - 5554:5554
+      - 5555:5555
     environment:
-      DEVICE: "Nexus 5"
+      - DEVICE=Samsung Galaxy S6
   expo:
     build:
       dockerfile: Dockerfile-expo
