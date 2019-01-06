@@ -11,10 +11,10 @@ services:
     environment:
       - DEVICE=Samsung Galaxy S6
     privileged: true
-  android-adb:
+#  android-adb:
     # Solution taken from https://hub.docker.com/r/sorccu/adb
-    image: sorccu/adb
-    container_name: android-adb
+#    image: sorccu/adb
+#    container_name: android-adb
   expo:
     build:
       context: .
@@ -22,6 +22,5 @@ services:
     expose:
       - 8080
       - 4443
-# share volume
-volumes:
-    app-volume:
+    volumes:
+      - /home/claudio/Downloads/workspace/templating-rn:/work

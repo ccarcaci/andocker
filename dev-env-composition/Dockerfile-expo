@@ -1,4 +1,6 @@
 from node:slim
 
+WORKDIR /work
+
 run npm install -g expo-cli
-entrypoint expo -V
+entrypoint npm run android
