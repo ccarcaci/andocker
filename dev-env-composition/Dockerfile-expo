@@ -1,8 +1,4 @@
-from node:latest
-label version=0.0.1
-
-env WORKPATH /work
+from node:slim
 
 run npm install -g expo-cli
-
 entrypoint expo -V
