@@ -1,0 +1,6 @@
+from thyrlian/android-sdk-vnc
+
+run sdkmanager --install 'system-images;android-28;google_apis;x86_64'
+run avdmanager create avd -n Nexus5X -k 'system-images;android-28;google_apis;x86_64' --device 'Nexus 5X'
+
+entrypoint emulator -avd emuTest -noaudio -no-boot-anim -gpu off

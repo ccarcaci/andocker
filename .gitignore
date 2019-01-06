@@ -23,3 +23,5 @@ gradlew*
 .gradle*
 .idea*
 gradle*
+
+sdk-tools-linux-*
