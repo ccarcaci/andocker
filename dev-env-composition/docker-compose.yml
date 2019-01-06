@@ -19,6 +19,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-expo
+    container_name: expo-toolchain
     expose:
       - 8080
       - 4443
