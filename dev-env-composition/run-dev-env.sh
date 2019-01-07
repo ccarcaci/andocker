@@ -1,6 +1,6 @@
 # Prerequisites: Docker, Docker Compose, Chrome
 
-ENV butomoVersion=8.1
+export butomoVersion=8.1
 
 yes | docker system prune
 
