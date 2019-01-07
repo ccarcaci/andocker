@@ -1,7 +1,7 @@
 version: '3'
 services:
   android-emulator:
-    image: butomo1989/docker-android-x86-7.1.1
+    image: butomo1989/docker-android-x86-${butomoVersion}
     container_name: android-emulator
     ports:
       - 6080:6080
@@ -9,8 +9,10 @@ services:
       - 5555:5555
     environment:
       - DEVICE=Samsung Galaxy S6
+    privileged: true
   expo:
     build:
+      context: .
       dockerfile: Dockerfile-expo
     expose:
       - 8080
