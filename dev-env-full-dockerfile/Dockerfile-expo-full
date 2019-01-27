@@ -1,0 +1,9 @@
+from butomo1989/docker-android-x86-9.0
+
+copy code/ /home/app/
+
+# workdir /home/app
+# run npm install expo-cli --global
+
+# cmd adb connect localhost
+# entrypoint expo android
