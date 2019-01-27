@@ -3,11 +3,14 @@ label version=0.0.1
 
 run npm install -g expo-cli
 
-run wget -q https://dl.google.com/android/repository/platform-tools-latest-linux.zip && \
-	unzip platform-tools-latest-linux.zip && \
+run apt-get update && \
+	yes | apt-get install zip && \
+	wget -q https://dl.google.com/android/repository/platform-tools-latest-linux.zip && \
+	unzip -q platform-tools-latest-linux.zip && \
 	rm platform-tools-latest-linux.zip && \
-	./platform-tools_r28.0.1-linux/platform-tools/adb connect android-emulator:5555
+	export PATH=$PATH:/platform-tools && \
+	adb connect android-emulator:5555
 
 workdir /app
 
-entrypoint expo start
+entrypoint expo android
