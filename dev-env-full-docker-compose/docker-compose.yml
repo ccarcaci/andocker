@@ -1,6 +1,6 @@
 version: '3'
 services:
-  android-emulator:
+  emulator:
     # Solution taken from https://github.com/butomo1989/docker-android
     image: butomo1989/docker-android-x86-${butomoVersion}
     container_name: android-emulator
