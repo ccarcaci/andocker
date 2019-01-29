@@ -8,9 +8,10 @@ run apt-get update && \
 	wget -q https://dl.google.com/android/repository/platform-tools-latest-linux.zip && \
 	unzip -q platform-tools-latest-linux.zip && \
 	rm platform-tools-latest-linux.zip && \
-	export PATH=$PATH:/platform-tools && \
-	adb connect android-emulator:5555
+	export PATH=$PATH:/platform-tools
 
+copy code/ /app
 workdir /app
 
-entrypoint expo android
+entrypoint [ "expo", "android" ]
+# cmd adb connect emulator
