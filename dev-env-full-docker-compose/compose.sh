@@ -3,7 +3,9 @@
 export butomoVersion=9.0
 yes | docker system prune
 
+ln -s ../code
 docker-compose build --build-arg butomoVersion=$butomoVersion emulator expo
+rm code
 docker-compose up -d
 exec google-chrome --new-window http://localhost:6080 > /dev/null &
 
