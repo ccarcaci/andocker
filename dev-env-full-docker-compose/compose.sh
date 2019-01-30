@@ -1,6 +1,6 @@
 # Prerequisites: Docker, Docker Compose, Chrome
 
-export butomoVersion=8.1
+export butomoVersion=9.0
 yes | docker system prune
 
 docker-compose build --build-arg butomoVersion=$butomoVersion emulator expo
