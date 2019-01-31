@@ -13,5 +13,5 @@ run apt-get update && \
 copy code/ /app
 workdir /app
 
-entrypoint [ "expo", "android" ]
+cmd [ "expo", "android" ]
 # cmd adb connect emulator
