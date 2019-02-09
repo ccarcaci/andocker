@@ -14,7 +14,7 @@ services:
   expo:
     build:
       context: ../
-      dockerfile: dev-env-full-docker-compose/Dockerfile-expo
+      dockerfile: ecosystem/Dockerfile-expo
     container_name: expo
     expose:
       - 8080
