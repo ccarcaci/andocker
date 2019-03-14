@@ -3,7 +3,6 @@ label version=0.0.1
 
 ENV PATH="/platform-tools:${PATH}"
 
-copy code /app
 copy ecosystem/run-expo-app.sh /app
 
 run npm install -g expo-cli
