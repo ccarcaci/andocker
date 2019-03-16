@@ -1,14 +1,13 @@
 from node:latest
 label version=0.0.1
 
-ENV PATH="/platform-tools:${PATH}"
+env PATH="/platform-tools:${PATH}"
 
-copy ecosystem/run-expo-app.sh /app
+copy ecosystem/run-expo-app.sh /app/
 
 run npm install -g expo-cli
-
 run apt-get update && \
-	yes | apt-get install zip apt-utils && \
+  yes | apt-get install zip apt-utils && \
 	wget -q https://dl.google.com/android/repository/platform-tools-latest-linux.zip && \
 	unzip -q platform-tools-latest-linux.zip && \
 	rm platform-tools-latest-linux.zip && \

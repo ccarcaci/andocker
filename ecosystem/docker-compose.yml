@@ -19,5 +19,5 @@ services:
     expose:
       - 8080
       - 4443
-volumes:
-  code: ../code
+    volumes:
+      - "../code:/code"
