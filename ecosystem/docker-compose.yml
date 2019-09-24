@@ -2,14 +2,14 @@ version: '3'
 services:
   emulator:
     # Solution taken from https://github.com/butomo1989/docker-android
-    image: butomo1989/docker-android-x86-${butomoVersion}
+    image: butomo1989/docker-android-genymotion
     container_name: emulator
 #    ports:
 #      - 6080:6080
 #      - 5554:5554
 #      - 5555:5555
     environment:
-      - DEVICE=Samsung Galaxy S6
+      - DEVICE=Samsung Galaxy S10
     privileged: true
 
   expo:
