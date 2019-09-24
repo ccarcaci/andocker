@@ -13,6 +13,11 @@ run apt-get update && \
 	rm platform-tools-latest-linux.zip && \
   chmod +x app/run-expo-app.sh
 
+env DOCKERIZE_VERSION v0.6.1
+run wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
 workdir /app
 
-cmd ./run-expo-app.sh
+cmd dockerize -wait http://emulator:6080 ./run-expo-app.sh
