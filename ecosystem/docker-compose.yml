@@ -11,6 +11,7 @@ services:
     environment:
       - DEVICE=Samsung Galaxy S6
     privileged: true
+
   expo:
     build:
       context: ../
