@@ -20,4 +20,6 @@ run wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 workdir /app
 
+healthcheck CMD curl -f http://emulator:6080/ || exit 1
+
 cmd ./run-expo-app.sh
