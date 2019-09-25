@@ -1,5 +1,6 @@
 cd ../code
 npm i
-# sleep 20
-dockerize -wait http://emulator:6080 adb connect emulator:5555
+dockerize -wait tcp://emulator:5555
+adb connect emulator:5555
+adb devices
 npm run android

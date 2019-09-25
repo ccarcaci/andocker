@@ -19,7 +19,4 @@ run wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 workdir /app
-
-healthcheck CMD curl -f http://emulator:6080/ || exit 1
-
 cmd ./run-expo-app.sh
