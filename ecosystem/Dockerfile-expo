@@ -20,4 +20,4 @@ run wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 workdir /app
 
-cmd dockerize -wait http://emulator:6080 ./run-expo-app.sh
+cmd ./run-expo-app.sh
