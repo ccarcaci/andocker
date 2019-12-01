@@ -1,22 +1,25 @@
 from node:latest
 label version=0.0.1
 
-env PATH="/platform-tools:${PATH}"
+workdir /home/node
 
-copy ecosystem/run-expo-app.sh /app/
+user node
+copy ecosystem/run-expo-app.sh .
 
-run npm install -g expo-cli
+user root
 run apt-get update && \
   yes | apt-get install zip apt-utils && \
-	wget -q https://dl.google.com/android/repository/platform-tools-latest-linux.zip && \
-	unzip -q platform-tools-latest-linux.zip && \
-	rm platform-tools-latest-linux.zip && \
-  chmod +x app/run-expo-app.sh
+  chmod +x run-expo-app.sh && \
+  chown node run-expo-app.sh
+run npm install -g expo-cli
 
+user node
 env DOCKERIZE_VERSION v0.6.1
-run wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+run wget -q https://dl.google.com/android/repository/platform-tools-latest-linux.zip && \
+	unzip -q platform-tools-latest-linux.zip && \
+	rm platform-tools-latest-linux.zip
+run wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+  tar -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+  rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
-workdir /app
 cmd ./run-expo-app.sh
