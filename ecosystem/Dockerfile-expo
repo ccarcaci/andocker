@@ -5,6 +5,7 @@ workdir /home/node
 
 user node
 copy ecosystem/run-expo-app.sh .
+env PATH=/home/node/platform-tools:${PATH}
 
 user root
 run apt-get update && \

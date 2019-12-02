@@ -2,7 +2,11 @@
 
 docker-compose down
 yes | docker system prune
-docker image rm -f ecosystem_expo:latest
+
+if [ "$1" == "--rebuild-ecosystem" ]; then
+  docker image rm -f ecosystem_expo:latest
+fi
+
 (cd ../code; npm i; npm audit fix)
 docker-compose up
 
