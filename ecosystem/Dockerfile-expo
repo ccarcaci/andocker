@@ -1,4 +1,4 @@
-from node:latest
+from node:erbium
 label version=0.0.1
 
 workdir /home/node
@@ -12,7 +12,6 @@ run apt-get update && \
   yes | apt-get install zip apt-utils && \
   chmod +x run-expo-app.sh && \
   chown node run-expo-app.sh
-run npm install -g expo-cli
 
 user node
 env DOCKERIZE_VERSION v0.6.1
