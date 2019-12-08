@@ -9,7 +9,7 @@ services:
       - 5554:5554
       - 5555:5555
     environment:
-      - DEVICE=Nexus 5
+      - DEVICE=Samsung Galaxy S10
     privileged: true
 
   expo:
