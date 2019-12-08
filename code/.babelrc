@@ -1,13 +1,3 @@
 {
-  "presets": ["babel-preset-expo"],
-  "env": {
-    "development": {
-		"plugins": [
-			"@babel/transform-react-jsx-source",
-			[ "module-resolver", {
-				"root": [ "./app" ]
-			} ]
-		]
-    }
-  }
+  "presets": ["module:metro-react-native-babel-preset"]
 }
