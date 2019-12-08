@@ -7,16 +7,25 @@ To have an explanation on how this tool works please refer to this article: [And
 
 ## Prerequisites
 
+Host system must provide:
+
 * Docker
+* Node 12.13.1 Erbium ([nvm could come in to help out](http://nvm.sh))
 
 ## How to Use
 
 Go to the /ecosystem folder, set executable permission to compose.sh script and run it:
 
-```
+```bash
 $ cd ecosystem/
 $ chmod +x compose.sh
 $ ./compose.sh
+```
+
+To force the expo image rebuilding run the command:
+
+```bash
+$ ./compose.sh --rebuild-ecosystem
 ```
 
 ## License
