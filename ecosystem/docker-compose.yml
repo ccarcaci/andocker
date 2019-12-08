@@ -2,12 +2,14 @@ version: '3'
 services:
   emulator:
     # Solution taken from https://github.com/butomo1989/docker-android
-    image: butomo1989/docker-android-x86-8.1
+    image: budtmo/docker-android-x86-10.0
     container_name: emulator
     ports:
       - 6080:6080
+      - 5554:5554
+      - 5555:5555
     environment:
-      - DEVICE=Samsung Galaxy S6
+      - DEVICE=Samsung Galaxy S10
     privileged: true
 
   expo:
@@ -16,6 +18,6 @@ services:
       dockerfile: ecosystem/Dockerfile-expo
     container_name: expo
     volumes:
-      - "../code:/code"
+      - ../code:/home/node/code
     depends_on:
       - emulator
