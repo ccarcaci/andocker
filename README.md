@@ -36,6 +36,7 @@ This [issue](https://github.com/ccarcaci/andocker/issues/6) has been investigate
 * The emulator works only in Ubuntu systems. It is possible that it works also on other *nix systems but they have not been tested yet.
 * *nested virtualisation* must be available in host system.
 If you're using a VM to run the host system:
+
 VirtualBox: https://docs.oracle.com/en/virtualization/virtualbox/6.0/relnotes/nested-virt-support.html
 VMWare supports nested virtualization natively.
 * OSX users must virtualize system host.
