@@ -31,9 +31,9 @@ $ ./compose.sh --rebuild-ecosystem
 
 ## Usage Technical Limitations
 
-This [issue](https://github.com/ccarcaci/andocker/issues/6) has been investigated in details what are some limitations.
+This [issue](https://github.com/ccarcaci/andocker/issues/6) investigated in details what are some limitations.
 
-* The emulator works only in Ubuntu systems. It is possible that it works also on other *nix systems but they have not been tested yet.
+* The emulator works only in Ubuntu systems. It is possible that it works also on others Linux OS but they have not been tested yet.
 * *nested virtualisation* must be available in host system.
 If you're using a VM to run the host system:
 
@@ -42,7 +42,7 @@ If you're using a VM to run the host system:
   VMWare supports nested virtualization natively.
 
   If you're on an Intel CPU please verify the related virtualization mirroring from host to guest system.
-* OSX users must virtualize system host.
+* OSX users must virtualize host system.
 
 Special thanks to [omarhassanhub](https://github.com/omarhassanhub) who conducted this detailed investigation.
 
