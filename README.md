@@ -37,8 +37,9 @@ This [issue](https://github.com/ccarcaci/andocker/issues/6) has been investigate
 * *nested virtualisation* must be available in host system.
 If you're using a VM to run the host system:
 
-VirtualBox: https://docs.oracle.com/en/virtualization/virtualbox/6.0/relnotes/nested-virt-support.html
-VMWare supports nested virtualization natively.
+  [Enable in VirtualBox](https://docs.oracle.com/en/virtualization/virtualbox/6.0/relnotes/nested-virt-support.html)
+
+  VMWare supports nested virtualization natively.
 * OSX users must virtualize system host.
 
 Special thanks to [omarhassanhub](https://github.com/omarhassanhub) who conducted this detailed investigation.
