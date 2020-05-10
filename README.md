@@ -41,7 +41,7 @@ If you're using a VM to run the host system:
 
   VMWare supports nested virtualization natively.
 
-  If you're on an Intel CPU please verify the related virtualization mirroring from host to guest system.
+  If you're on an Intel CPU please verify the related virtualization mirroring.
 * OSX users must virtualize host system.
 
 Special thanks to [omarhassanhub](https://github.com/omarhassanhub) who conducted this detailed investigation.
